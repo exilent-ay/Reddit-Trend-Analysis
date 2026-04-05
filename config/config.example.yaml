@@ -1,0 +1,41 @@
+# config.example.yaml — Copy to config.yaml and fill in real values.
+# Do NOT commit config.yaml to version control.
+
+reddit:
+  client_id: "YOUR_REDDIT_CLIENT_ID"
+  client_secret: "YOUR_REDDIT_CLIENT_SECRET"
+  user_agent: "RedditTrendAnalysisTool/0.1 by YOUR_USERNAME"
+  # Subreddits to monitor per niche
+  subreddits:
+    tech_gadgets:
+      - gadgets
+      - electronics
+      - hardware
+    home_kitchen:
+      - homeimprovement
+      - kitchen
+      - BuyItForLife
+    fitness_health:
+      - Fitness
+      - loseit
+      - BodyweightFitness
+
+database:
+  # SQLite (default for local dev)
+  url: "sqlite:///./reddit_trends.db"
+  # Uncomment for Postgres:
+  # url: "postgresql+psycopg2://user:password@localhost:5432/reddit_trends"
+
+scheduler:
+  # Cron expression for ingestion jobs (default: every hour)
+  ingest_interval_minutes: 60
+
+llm:
+  # Placeholder for future LLM integration
+  provider: "openai"
+  api_key: "YOUR_LLM_API_KEY"
+  model: "gpt-4o-mini"
+
+logging:
+  level: "INFO"
+  file: "logs/app.log"

@@ -1,0 +1,6 @@
+This directory will contain the frontend UI assets.
+
+Planned implementation: React or plain HTML/CSS dashboard to display
+internal trend summaries. No Reddit content will be rendered here.
+
+To be built in a future milestone.
