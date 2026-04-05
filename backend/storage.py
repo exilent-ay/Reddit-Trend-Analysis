@@ -7,7 +7,7 @@ results. Supports SQLite (default) and Postgres.
 
 from __future__ import annotations
 
-from datetime import datetime
+from datetime import datetime, timezone
 
 from sqlalchemy import (
     Column,
@@ -48,7 +48,7 @@ class PostRecord(Base):
     score = Column(Integer, default=0)
     created_utc = Column(Float, nullable=False)
     excerpt = Column(Text, default="")
-    ingested_at = Column(DateTime, default=datetime.utcnow)
+    ingested_at = Column(DateTime, default=lambda: datetime.now(timezone.utc))
 
 
 class TrendSummary(Base):
@@ -59,7 +59,7 @@ class TrendSummary(Base):
     id = Column(Integer, primary_key=True, autoincrement=True)
     niche = Column(String(64), nullable=False, index=True)
     summary_text = Column(Text, nullable=False)
-    generated_at = Column(DateTime, default=datetime.utcnow)
+    generated_at = Column(DateTime, default=lambda: datetime.now(timezone.utc))
 
 
 # ---------------------------------------------------------------------------

@@ -8,7 +8,7 @@ Reddit's UI, or interact with Reddit users in any way.
 
 from __future__ import annotations
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from typing import Any
 
 import httpx
