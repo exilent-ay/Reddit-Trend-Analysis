@@ -1,0 +1,6 @@
+This directory will contain the UI-facing backend API layer.
+
+Planned implementation: FastAPI routers that serve aggregated trend data
+and internal summaries to the frontend. No raw Reddit content is exposed.
+
+To be built in a future milestone.
